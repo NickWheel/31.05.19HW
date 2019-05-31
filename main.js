@@ -24,9 +24,10 @@ outer: for (let i=0;i<vertical_lights.length;i++) {
         horizontal_lights[i].style.backgroundColor = 'lime';
         horizontal_road.style.backgroundColor = green_road;
         counter += 1;
-        console.log(counter);
+        console.log(counter, 'end of outer for loop', i);
 
         if(vertical_lights[i].style.backgroundColor === 'red') {
+            console.log(counter, 'in if', i);
             btn.addEventListener('click', function() {
                 vertical_lights[i].style.backgroundColor = 'lime';
                 vertical_road.style.zIndex = '6';
@@ -35,15 +36,14 @@ outer: for (let i=0;i<vertical_lights.length;i++) {
                 horizontal_lights[i].style.backgroundColor = 'red';
                 horizontal_road.style.backgroundColor = red_road;
                 counter += 1;
-                console.log(counter, 'before break');
+                console.log(counter, 'before break', i);
             });
         }
     });
-    i = 0;
+    // i = 0;
     
     // btn.addEventListener('click', function() {
     //     vertical_lights[i].style = 'background-color: lime;'
     //     horizontal_lights[i].style = 'background-color: red;'
     // });
 }
-
